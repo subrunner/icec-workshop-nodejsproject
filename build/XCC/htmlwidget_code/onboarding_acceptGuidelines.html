@@ -1,0 +1,33 @@
+<input name="acceptedGuidelines" style="display:none" type="text" id="acceptedGuidelines">
+<div id="acceptedGuidelinesCheck"/>
+<script type="text/javascript">
+	(function(){
+		var $content = $('<div class="form-check"><input type="checkbox" class="form-check-input" id="checkbox"><label class="form-check-label" for="checkbox" style="padding-left: 10px">'
+						 + XCC.L.get("acceptGuidelines","I have read and accepted the guidelines.")
+						 + '</label></div>'),
+			checkbox = $content.find("#checkbox")[0];
+
+		checkbox.onclick = function(){
+			var checked = !!checkbox.checked;
+			if (checked)
+				document.getElementById("acceptedGuidelines").value = checked;
+			else
+				document.getElementById("acceptedGuidelines").value = null;
+			//console.log("Clicked checkbox - selected " + checked);
+			XCC.P.getProfile().setExtensionValue("acceptedGuidelines", checked + "");
+		};
+
+		XCC.require(["profiles"], function () {
+
+
+
+
+			if ("true" === XCC.P.getProfile().getExtensionValue("acceptedGuidelines")){
+				checkbox.checked = "true";
+				$.find("#acceptedGuidelines")[0].value="true";
+			}
+			$.find("#acceptedGuidelinesCheck")[0].appendChild($content[0]);
+			console.log($.find("#acceptedGuidelinesCheck"));
+		});
+	})();
+</script>
