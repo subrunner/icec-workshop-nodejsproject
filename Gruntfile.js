@@ -74,6 +74,13 @@ module.exports = function (grunt) {
 						cwd: XCCJS,
 						dest: distXCCDateiablage,
 						src: ["lib/*.js", "replacedModules/*.js"] // copy this stuff after the uglifying was done.
+				},
+				{
+					expand: true,
+					flatten: true,
+					cwd: "build/XCC",
+					dest: distXCCDateiablage,
+					src: ["!**/.gitkeep", "html/*.*", "images/*.*"]
 				}]
 			}
 
@@ -149,8 +156,6 @@ module.exports = function (grunt) {
 	// load ESLint --> validate JS
 	grunt.loadNpmTasks('grunt-eslint');
 	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-sass-lint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks("grunt-contrib-clean");
