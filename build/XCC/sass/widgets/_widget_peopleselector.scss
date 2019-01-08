@@ -1,0 +1,17 @@
+.xccstyle .xccWidget[data-wtype="xccPeopleSelector"] {
+
+	.pf-channel {
+		display: flex;
+		flex-flow: wrap;
+
+		.pf-channel-headline {
+			width: 100%;
+		}
+
+		.pf-result {
+			width: 50%;
+		}
+	}
+
+
+}

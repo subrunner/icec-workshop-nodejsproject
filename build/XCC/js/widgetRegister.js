@@ -4,6 +4,6 @@
  */
 (function () {
 	XCC.X = XCC.X || {};
-	XCC.X.customWidgets = ["Brainstation"];
-	XCC.X.replacedModules = ["communityOverview"];
+	XCC.X.customWidgets = ["Brainstation","Mein_Peopleselector"];
+	XCC.X.replacedModules = ["communityOverview"/*,"peopleSelector"*/];
 })();

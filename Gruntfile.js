@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 				},
 				{
 					expand: true,
-					src: [ "**/*.js", "!**/*-min.js"],
+					src: [ "**/*.js", "!**/*-min.js", "!custom.js"],
 					dest: distXCCDateiablage,
 					cwd: distXCCDateiablage
 				}]
